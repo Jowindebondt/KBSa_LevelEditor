@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.gb_Tiles = new System.Windows.Forms.GroupBox();
-            this.button_Open_Level = new System.Windows.Forms.Button();
-            this.button_CreateXML = new System.Windows.Forms.Button();
-            this.comboBox_Theme = new System.Windows.Forms.ComboBox();
-            this.label_Theme = new System.Windows.Forms.Label();
-            this.hScrollBar = new System.Windows.Forms.HScrollBar();
-            this.panel = new System.Windows.Forms.Panel();
             this.pictureBox_Goomba = new System.Windows.Forms.PictureBox();
             this.pictureBox_Pipe_BottomRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_Pipe_BottomCenter = new System.Windows.Forms.PictureBox();
@@ -43,7 +37,9 @@
             this.pictureBox_Pipe_TopRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_Pipe_TopCenter = new System.Windows.Forms.PictureBox();
             this.pictureBox_Pipe_TopLeft = new System.Windows.Forms.PictureBox();
+            this.button_Open_Level = new System.Windows.Forms.Button();
             this.pictureBox_Mario = new System.Windows.Forms.PictureBox();
+            this.button_CreateXML = new System.Windows.Forms.Button();
             this.pictureBox_Empty = new System.Windows.Forms.PictureBox();
             this.pictureBox_SpecialBlock = new System.Windows.Forms.PictureBox();
             this.pictureBox_Block = new System.Windows.Forms.PictureBox();
@@ -56,6 +52,13 @@
             this.pictureBox_Ground_TopRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ground_TopCenter = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ground_TopLeft = new System.Windows.Forms.PictureBox();
+            this.comboBox_Theme = new System.Windows.Forms.ComboBox();
+            this.label_Theme = new System.Windows.Forms.Label();
+            this.hScrollBar = new System.Windows.Forms.HScrollBar();
+            this.panel = new System.Windows.Forms.Panel();
+            this.vScrollBar = new System.Windows.Forms.VScrollBar();
+            this.debugLabel = new System.Windows.Forms.Label();
+            this.debugLabel2 = new System.Windows.Forms.Label();
             this.gb_Tiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Goomba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_BottomRight)).BeginInit();
@@ -81,6 +84,8 @@
             // 
             // gb_Tiles
             // 
+            this.gb_Tiles.Controls.Add(this.debugLabel2);
+            this.gb_Tiles.Controls.Add(this.debugLabel);
             this.gb_Tiles.Controls.Add(this.pictureBox_Goomba);
             this.gb_Tiles.Controls.Add(this.pictureBox_Pipe_BottomRight);
             this.gb_Tiles.Controls.Add(this.pictureBox_Pipe_BottomCenter);
@@ -111,70 +116,6 @@
             this.gb_Tiles.TabIndex = 0;
             this.gb_Tiles.TabStop = false;
             this.gb_Tiles.Text = "Tiles";
-            // 
-            // button_Open_Level
-            // 
-            this.button_Open_Level.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Open_Level.Location = new System.Drawing.Point(3, 670);
-            this.button_Open_Level.Name = "button_Open_Level";
-            this.button_Open_Level.Size = new System.Drawing.Size(278, 32);
-            this.button_Open_Level.TabIndex = 17;
-            this.button_Open_Level.Text = "Open existing level";
-            this.button_Open_Level.UseVisualStyleBackColor = true;
-            this.button_Open_Level.Click += new System.EventHandler(this.button_Open_Level_Click);
-            // 
-            // button_CreateXML
-            // 
-            this.button_CreateXML.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_CreateXML.Location = new System.Drawing.Point(3, 702);
-            this.button_CreateXML.Name = "button_CreateXML";
-            this.button_CreateXML.Size = new System.Drawing.Size(278, 32);
-            this.button_CreateXML.TabIndex = 15;
-            this.button_CreateXML.Text = "Create XML";
-            this.button_CreateXML.UseVisualStyleBackColor = true;
-            this.button_CreateXML.Click += new System.EventHandler(this.button_CreateXML_Click);
-            // 
-            // comboBox_Theme
-            // 
-            this.comboBox_Theme.FormattingEnabled = true;
-            this.comboBox_Theme.Items.AddRange(new object[] {
-            "Landscape",
-            "Dungeon",
-            "Sky",
-            "Water"});
-            this.comboBox_Theme.Location = new System.Drawing.Point(72, 19);
-            this.comboBox_Theme.Name = "comboBox_Theme";
-            this.comboBox_Theme.Size = new System.Drawing.Size(145, 24);
-            this.comboBox_Theme.TabIndex = 1;
-            this.comboBox_Theme.SelectedIndexChanged += new System.EventHandler(this.comboBox_Theme_SelectedIndexChanged);
-            // 
-            // label_Theme
-            // 
-            this.label_Theme.AutoSize = true;
-            this.label_Theme.Location = new System.Drawing.Point(7, 22);
-            this.label_Theme.Name = "label_Theme";
-            this.label_Theme.Size = new System.Drawing.Size(56, 17);
-            this.label_Theme.TabIndex = 0;
-            this.label_Theme.Text = "Theme:";
-            // 
-            // hScrollBar
-            // 
-            this.hScrollBar.Location = new System.Drawing.Point(303, 751);
-            this.hScrollBar.Name = "hScrollBar";
-            this.hScrollBar.Size = new System.Drawing.Size(1223, 21);
-            this.hScrollBar.TabIndex = 12;
-            this.hScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar_Scroll);
-            // 
-            // panel
-            // 
-            this.panel.BackgroundImage = global::Levelbuilder.Properties.Resources.backgroundSky;
-            this.panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel.Location = new System.Drawing.Point(303, 13);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1223, 737);
-            this.panel.TabIndex = 11;
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
-            this.panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel_MouseClick);
             // 
             // pictureBox_Goomba
             // 
@@ -253,6 +194,17 @@
             this.pictureBox_Pipe_TopLeft.TabStop = false;
             this.pictureBox_Pipe_TopLeft.Click += new System.EventHandler(this.pictureBox_Click);
             // 
+            // button_Open_Level
+            // 
+            this.button_Open_Level.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_Open_Level.Location = new System.Drawing.Point(3, 670);
+            this.button_Open_Level.Name = "button_Open_Level";
+            this.button_Open_Level.Size = new System.Drawing.Size(278, 32);
+            this.button_Open_Level.TabIndex = 17;
+            this.button_Open_Level.Text = "Open existing level";
+            this.button_Open_Level.UseVisualStyleBackColor = true;
+            this.button_Open_Level.Click += new System.EventHandler(this.button_Open_Level_Click);
+            // 
             // pictureBox_Mario
             // 
             this.pictureBox_Mario.BackgroundImage = global::Levelbuilder.Properties.Resources.Mario;
@@ -263,6 +215,17 @@
             this.pictureBox_Mario.TabIndex = 16;
             this.pictureBox_Mario.TabStop = false;
             this.pictureBox_Mario.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // button_CreateXML
+            // 
+            this.button_CreateXML.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_CreateXML.Location = new System.Drawing.Point(3, 702);
+            this.button_CreateXML.Name = "button_CreateXML";
+            this.button_CreateXML.Size = new System.Drawing.Size(278, 32);
+            this.button_CreateXML.TabIndex = 15;
+            this.button_CreateXML.Text = "Create XML";
+            this.button_CreateXML.UseVisualStyleBackColor = true;
+            this.button_CreateXML.Click += new System.EventHandler(this.button_CreateXML_Click);
             // 
             // pictureBox_Empty
             // 
@@ -395,15 +358,90 @@
             this.pictureBox_Ground_TopLeft.TabStop = false;
             this.pictureBox_Ground_TopLeft.Click += new System.EventHandler(this.pictureBox_Click);
             // 
+            // comboBox_Theme
+            // 
+            this.comboBox_Theme.FormattingEnabled = true;
+            this.comboBox_Theme.Items.AddRange(new object[] {
+            "Landscape",
+            "Dungeon",
+            "Sky",
+            "Water"});
+            this.comboBox_Theme.Location = new System.Drawing.Point(72, 19);
+            this.comboBox_Theme.Name = "comboBox_Theme";
+            this.comboBox_Theme.Size = new System.Drawing.Size(145, 24);
+            this.comboBox_Theme.TabIndex = 1;
+            this.comboBox_Theme.SelectedIndexChanged += new System.EventHandler(this.comboBox_Theme_SelectedIndexChanged);
+            // 
+            // label_Theme
+            // 
+            this.label_Theme.AutoSize = true;
+            this.label_Theme.Location = new System.Drawing.Point(7, 22);
+            this.label_Theme.Name = "label_Theme";
+            this.label_Theme.Size = new System.Drawing.Size(56, 17);
+            this.label_Theme.TabIndex = 0;
+            this.label_Theme.Text = "Theme:";
+            // 
+            // hScrollBar
+            // 
+            this.hScrollBar.Location = new System.Drawing.Point(303, 751);
+            this.hScrollBar.Name = "hScrollBar";
+            this.hScrollBar.Size = new System.Drawing.Size(1223, 21);
+            this.hScrollBar.TabIndex = 12;
+            this.hScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar_Scroll);
+            // 
+            // panel
+            // 
+            this.panel.BackgroundImage = global::Levelbuilder.Properties.Resources.backgroundSky;
+            this.panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel.Location = new System.Drawing.Point(303, 13);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1223, 737);
+            this.panel.TabIndex = 11;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            this.panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel_MouseClick);
+            // 
+            // vScrollBar
+            // 
+            this.vScrollBar.Location = new System.Drawing.Point(1529, 13);
+            this.vScrollBar.Name = "vScrollBar";
+            this.vScrollBar.Size = new System.Drawing.Size(21, 737);
+            this.vScrollBar.TabIndex = 13;
+            this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
+            // 
+            // debugLabel
+            // 
+            this.debugLabel.AutoSize = true;
+            this.debugLabel.Location = new System.Drawing.Point(7, 380);
+            this.debugLabel.Name = "debugLabel";
+            this.debugLabel.Size = new System.Drawing.Size(83, 17);
+            this.debugLabel.TabIndex = 25;
+            this.debugLabel.Text = "debugLabel";
+            // 
+            // debugLabel2
+            // 
+            this.debugLabel2.AutoSize = true;
+            this.debugLabel2.Location = new System.Drawing.Point(7, 397);
+            this.debugLabel2.Name = "debugLabel2";
+            this.debugLabel2.Size = new System.Drawing.Size(91, 17);
+            this.debugLabel2.TabIndex = 26;
+            this.debugLabel2.Text = "debugLabel2";
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1538, 840);
+            this.ClientSize = new System.Drawing.Size(1616, 840);
+            this.Controls.Add(this.vScrollBar);
             this.Controls.Add(this.hScrollBar);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.gb_Tiles);
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MaximizedBoundsChanged += new System.EventHandler(this.MainForm_Resize);
+            this.MaximumSizeChanged += new System.EventHandler(this.MainForm_Resize);
+            this.MinimumSizeChanged += new System.EventHandler(this.MainForm_Resize);
+            this.ResizeEnd += new System.EventHandler(this.MainForm_Resize);
+            this.SizeChanged += new System.EventHandler(this.MainForm_Resize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.gb_Tiles.ResumeLayout(false);
@@ -461,6 +499,9 @@
         private System.Windows.Forms.PictureBox pictureBox_Pipe_TopCenter;
         private System.Windows.Forms.PictureBox pictureBox_Pipe_TopLeft;
         private System.Windows.Forms.PictureBox pictureBox_Goomba;
+        private System.Windows.Forms.VScrollBar vScrollBar;
+        private System.Windows.Forms.Label debugLabel;
+        private System.Windows.Forms.Label debugLabel2;
     }
 }
 

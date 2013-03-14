@@ -19,6 +19,9 @@ namespace Levelbuilder
         Node[][] level;
         List<Node> selectedNodes = new List<Node>();
         int viewColumn = 1;
+        int viewRow = 1;
+        int visibleColumns = 215;
+        int visibleRows = 22;
         bool shiftKeyIsDown = false;
         bool HeroIsSet = false;
         Point lastSelectedNode = new Point(-1,-1);
@@ -42,19 +45,49 @@ namespace Levelbuilder
                 }
             }
 
-            panel.Width = 42 * 32 + 1;
-            panel.Height = 22 * 32 + 1;
-            gb_Tiles.Height = 22 * 32 + 1;
-            hScrollBar.Maximum = 59;
-            hScrollBar.LargeChange = 3;
-            hScrollBar.Location = new Point(panel.Location.X, panel.Location.Y + panel.Height);
-            hScrollBar.Width = panel.Width;
-            this.Height = panel.Location.Y + panel.Height + hScrollBar.Height + 60;
-            this.Width = gb_Tiles.Width + panel.Width + 50;
-
             comboBox_Theme.SelectedIndex = 0;
 
-            this.Focus();
+            setupScreen();
+        }
+
+        private void setupScreen()
+        {
+            int panelWidth = this.Width - gb_Tiles.Width - vScrollBar.Width - 40;
+            int panelHeight = this.Height - hScrollBar.Height - 60;
+            panelHeight = panelHeight - (panelHeight % 32) + 1;
+
+            panel.Width = panelWidth - (panelWidth % 32) + 1;
+            if ((ROWS * 32 + 1) > panelHeight)
+                panel.Height = panelHeight;
+            else
+                panel.Height = ROWS * 32 + 1;
+
+            visibleColumns = panel.Width / 32;
+            visibleRows = panel.Height / 32;
+
+            gb_Tiles.Height = panel.Height;
+
+            hScrollBar.Maximum = 59;
+            hScrollBar.LargeChange = 3;
+            hScrollBar.SmallChange = 1;
+            hScrollBar.Location = new Point(panel.Location.X, panel.Location.Y + panel.Height);
+            hScrollBar.Width = panel.Width;
+            hScrollBar.Maximum = COLUMNS - visibleColumns;
+
+            vScrollBar.Height = panel.Height;
+            vScrollBar.Location = new Point(panel.Location.X + panel.Width, panel.Location.Y);
+            vScrollBar.LargeChange = 3;
+            vScrollBar.SmallChange = 1;
+            vScrollBar.Maximum = ROWS - visibleRows;
+
+            while (viewRow + visibleRows > ROWS + 1)
+            {
+                viewRow--;
+            }
+            while (viewColumn + visibleColumns > COLUMNS + 1)
+            {
+                viewColumn--;
+            }
         }
 
         private void comboBox_Theme_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,24 +117,36 @@ namespace Levelbuilder
             Pen p = new Pen(Color.Black);
             Brush b = new SolidBrush(Color.FromArgb(150, Color.Gray));
 
-            for (int x = viewColumn; x < (43 + viewColumn); x++)
+            vScrollBar.Value = viewRow - 1;
+            hScrollBar.Value = viewColumn - 1;
+
+            debugLabel.Text = "viewColumn: " + viewColumn + ", vissibleColumns: " + visibleColumns;
+            debugLabel2.Text = "viewRow: " + viewRow + ", vissibleRows: " + visibleRows;
+
+            int maxX = 0;
+            if (visibleColumns + viewColumn > COLUMNS)
+                maxX = COLUMNS - 1;
+            else
+                maxX = visibleColumns + viewColumn;
+
+            for (int x = viewColumn; x < maxX; x++)
             {
-                for (int y = 0; y < ROWS; y++)
+                for (int y = viewRow; y < (visibleRows + viewRow); y++)
                 {
-                    level[x - 1][y].drawGameObject(e.Graphics, x - viewColumn, y);
+                    level[x - 1][y - 1].drawGameObject(e.Graphics, x - viewColumn, y - viewRow);
                     
-                    if (selectedNodes.Contains(level[x - 1][y]))
+                    if (selectedNodes.Contains(level[x - 1][y - 1]))
                     {
                         if (selectedEnemy != null)
                         {
                             b = new SolidBrush(Color.FromArgb(150, Color.Green));
-                            e.Graphics.FillRectangle(b, (x - viewColumn) * 32, y * 32, 32, 32);
+                            e.Graphics.FillRectangle(b, (x - viewColumn) * 32, (y - viewRow) * 32, 32, 32);
                         }
                         else
                         {
-                            if (level[x - 1][y].gameObject != null && level[x - 1][y].gameObject == selectedEnemy)
+                            if (level[x - 1][y - 1].gameObject != null && level[x - 1][y - 1].gameObject == selectedEnemy)
                                 b = new SolidBrush(Color.FromArgb(150, Color.Green));
-                            e.Graphics.FillRectangle(b, (x - viewColumn) * 32, y * 32, 32, 32);
+                            e.Graphics.FillRectangle(b, (x - viewColumn) * 32, (y - viewRow) * 32, 32, 32);
                         }
                     }
                 }
@@ -121,14 +166,14 @@ namespace Levelbuilder
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
             int x = (e.X / 32) + viewColumn;
-            int y = e.Y / 32;
+            int y = (e.Y / 32) + viewRow;
 
             if (shiftKeyIsDown)
             {
                 selectedNodes.Clear();
 
                 if (selectedEnemy != null)
-                    selectedEnemy.endPoint = new Point(x - 1, y);
+                    selectedEnemy.endPoint = new Point(x - 1, y - 1);
                 
                 if (x < lastSelectedNode.X)
                 {
@@ -136,14 +181,14 @@ namespace Levelbuilder
                     {
                         if (y < lastSelectedNode.Y)
                         {
-                            for (int j = y; j <= lastSelectedNode.Y; j++)
+                            for (int j = y - 1; j <= lastSelectedNode.Y; j++)
                             {
                                 selectedNodes.Add(level[i][j]);
                             }
                         }
                         else if (y >= lastSelectedNode.Y)
                         {
-                            for (int j = lastSelectedNode.Y; j <= y; j++)
+                            for (int j = lastSelectedNode.Y; j < y; j++)
                             {
                                 selectedNodes.Add(level[i][j]);
                             }
@@ -163,7 +208,7 @@ namespace Levelbuilder
                         }
                         else if (y >= lastSelectedNode.Y)
                         {
-                            for (int j = lastSelectedNode.Y; j <= y; j++)
+                            for (int j = lastSelectedNode.Y; j < y; j++)
                             {
                                 selectedNodes.Add(level[i][j]);
                             }
@@ -174,10 +219,10 @@ namespace Levelbuilder
             else
             {
                 selectedNodes.Clear();
-                selectedNodes.Add(level[x - 1][y]);
-                if (level[x - 1][y].gameObject != null && level[x - 1][y].gameObject.GetType().BaseType == typeof(Enemy))
+                selectedNodes.Add(level[x - 1][y - 1]);
+                if (level[x - 1][y - 1].gameObject != null && level[x - 1][y - 1].gameObject.GetType().BaseType == typeof(Enemy))
                 {
-                    selectedEnemy = (Enemy)level[x - 1][y].gameObject;
+                    selectedEnemy = (Enemy)level[x - 1][y - 1].gameObject;
                     if (selectedEnemy.endPoint.X > -1 && selectedEnemy.endPoint.Y > -1)
                     {
                         if (x < selectedEnemy.endPoint.X)
@@ -186,14 +231,14 @@ namespace Levelbuilder
                             {
                                 if (y < selectedEnemy.endPoint.Y)
                                 {
-                                    for (int j = y; j <= selectedEnemy.endPoint.Y; j++)
+                                    for (int j = y - 1; j <= selectedEnemy.endPoint.Y; j++)
                                     {
                                         selectedNodes.Add(level[i][j]);
                                     }
                                 }
                                 else if (y >= selectedEnemy.endPoint.Y)
                                 {
-                                    for (int j = selectedEnemy.endPoint.Y; j <= y; j++)
+                                    for (int j = selectedEnemy.endPoint.Y; j < y; j++)
                                     {
                                         selectedNodes.Add(level[i][j]);
                                     }
@@ -213,7 +258,7 @@ namespace Levelbuilder
                                 }
                                 else if (y >= selectedEnemy.endPoint.Y)
                                 {
-                                    for (int j = selectedEnemy.endPoint.Y; j <= y; j++)
+                                    for (int j = selectedEnemy.endPoint.Y; j < y; j++)
                                     {
                                         selectedNodes.Add(level[i][j]);
                                     }
@@ -225,7 +270,7 @@ namespace Levelbuilder
                 else
                     selectedEnemy = null;
                
-                lastSelectedNode = new Point(x - 1, y);
+                lastSelectedNode = new Point(x - 1, y - 1);
             }
 
             panel.Invalidate();
@@ -233,23 +278,22 @@ namespace Levelbuilder
 
         private void hScrollBar_Scroll(object sender, ScrollEventArgs e)
         {
+            
             if (e.OldValue > e.NewValue)
             {
                 int diff = e.OldValue - e.NewValue;
                 //Left
-                if (viewColumn < 4)
+                viewColumn -= 3 * diff;
+                if (viewColumn < 1)
                     viewColumn = 1;
-                else
-                    viewColumn -= 3 * diff;
             }
             else if(e.OldValue < e.NewValue)
             {
                 int diff = e.NewValue - e.OldValue;
                 //Right
-                if (viewColumn > (COLUMNS - 43) - 4)
-                    viewColumn = COLUMNS - 43;
-                else
-                    viewColumn += 3 * diff;
+                viewColumn += 3 * diff;
+                if (viewColumn > (COLUMNS - visibleColumns))
+                    viewColumn = COLUMNS - visibleColumns;
             }
 
             panel.Invalidate();
@@ -738,6 +782,33 @@ namespace Levelbuilder
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            setupScreen();
+        }
+
+        private void vScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.OldValue > e.NewValue)
+            {
+                int diff = e.OldValue - e.NewValue;
+                //Up
+                viewRow -= 3 * diff;
+                if (viewRow < 1)
+                    viewRow = 1;
+            }
+            else if (e.OldValue < e.NewValue)
+            {
+                int diff = e.NewValue - e.OldValue;
+                //Down
+                viewRow += 3 * diff;
+                if (viewRow > (ROWS - visibleRows))
+                    viewRow = ROWS - visibleRows + 1;
+            }
+
+            panel.Invalidate();
         }
     }
 }
