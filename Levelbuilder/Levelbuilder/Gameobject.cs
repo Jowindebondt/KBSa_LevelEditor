@@ -118,17 +118,4 @@ namespace Levelbuilder
             return returnImage;
         }
     }
-
-    abstract class Enemy : Gameobject
-    {
-        public Point endPoint { get; set; }
-    }
-
-    class Goomba : Enemy
-    {
-        public override Image getImage()
-        {
-            return Properties.Resources.Goomba;
-        }
-    }
 }

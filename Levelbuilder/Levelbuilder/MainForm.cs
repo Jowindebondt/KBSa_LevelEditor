@@ -397,7 +397,15 @@ namespace Levelbuilder
                             break;
 
                         case "pictureBox_Goomba":
-                            selectedNode.gameObject = new Goomba(){ endPoint = new Point(-1,-1) };
+                            selectedNode.gameObject = new Goomba() { endPoint = new Point(-1, -1) };
+                            break;
+
+                        case "pictureBox_Troopa":
+                            selectedNode.gameObject = new Troopa() { endPoint = new Point(-1, -1) };
+                            break;
+
+                        case "pictureBox_ParaTroopa":
+                            selectedNode.gameObject = new ParaTroopa() { endPoint = new Point(-1, -1) };
                             break;
                     }
                 }
@@ -474,14 +482,16 @@ namespace Levelbuilder
                             if (level[i][j].gameObject != null)
                             {
                                 
-                                switch (level[i][j].gameObject.GetType().Name)
+                                switch(level[i][j].gameObject.GetType().Name)
                                 {
                                     case "Goomba":
-                                        Goomba goomba = (Goomba)level[i][j].gameObject;
+                                    case "Troopa":
+                                    case "ParaTroopa":
+                                        Enemy enemy = (Enemy)level[i][j].gameObject;
                                         //Opening the enemy node
                                         writer.WriteWhitespace("\t\t");
                                         writer.WriteStartElement("enemy");
-                                        writer.WriteAttributeString("character", "goomba");
+                                        writer.WriteAttributeString("character", enemy.GetType().Name.ToLower());
                                         writer.WriteWhitespace("\n");
 
                                         //Creating the location node
@@ -495,8 +505,8 @@ namespace Levelbuilder
                                         //Creating the endPath node
                                         writer.WriteWhitespace("\t\t\t");
                                         writer.WriteStartElement("endPath");
-                                        writer.WriteAttributeString("x", goomba.endPoint.X.ToString());
-                                        writer.WriteAttributeString("y", goomba.endPoint.Y.ToString());
+                                        writer.WriteAttributeString("x", enemy.endPoint.X.ToString());
+                                        writer.WriteAttributeString("y", enemy.endPoint.Y.ToString());
                                         writer.WriteEndElement();
                                         writer.WriteWhitespace("\n");
 
@@ -509,7 +519,6 @@ namespace Levelbuilder
                             }
                         }
                     }
-                    
 
                     //Closing the enemies node
                     writer.WriteWhitespace("\t");
@@ -760,6 +769,14 @@ namespace Levelbuilder
                                     {
                                         case "goomba":
                                             level[xLocation][yLocation].gameObject = new Goomba() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
+                                            break;
+
+                                        case "troopa":
+                                            level[xLocation][yLocation].gameObject = new Troopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
+                                            break;
+
+                                        case "paratroopa":
+                                            level[xLocation][yLocation].gameObject = new ParaTroopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
                                             break;
                                     }
                                     

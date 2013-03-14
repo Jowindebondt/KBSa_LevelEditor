@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enemy.cs" />
     <Compile Include="Gameobject.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -88,37 +89,10 @@
     <None Include="Resources\backgroundCave.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ground.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundBottomCenter.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundBottomLeft.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundBottomRight.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\groundCenterCenter.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\groundCenterLeft.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundCenterRight.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\groundTopCenter.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundTopLeft.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\groundTopRight.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SpecialBlock.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Block.bmp" />
@@ -170,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\goomba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParaTroopa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Troopa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

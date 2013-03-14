@@ -203,6 +203,16 @@ namespace Levelbuilder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ParaTroopa {
+            get {
+                object obj = ResourceManager.GetObject("ParaTroopa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pipeBottomCenter {
             get {
                 object obj = ResourceManager.GetObject("pipeBottomCenter", resourceCulture);
@@ -266,6 +276,16 @@ namespace Levelbuilder.Properties {
         internal static System.Drawing.Bitmap SpecialBlock {
             get {
                 object obj = ResourceManager.GetObject("SpecialBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Troopa {
+            get {
+                object obj = ResourceManager.GetObject("Troopa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
