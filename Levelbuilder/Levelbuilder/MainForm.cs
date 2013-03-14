@@ -120,9 +120,6 @@ namespace Levelbuilder
             vScrollBar.Value = viewRow - 1;
             hScrollBar.Value = viewColumn - 1;
 
-            debugLabel.Text = "viewColumn: " + viewColumn + ", vissibleColumns: " + visibleColumns;
-            debugLabel2.Text = "viewRow: " + viewRow + ", vissibleRows: " + visibleRows;
-
             int maxX = 0;
             if (visibleColumns + viewColumn > COLUMNS)
                 maxX = COLUMNS - 1;

@@ -57,8 +57,6 @@
             this.hScrollBar = new System.Windows.Forms.HScrollBar();
             this.panel = new System.Windows.Forms.Panel();
             this.vScrollBar = new System.Windows.Forms.VScrollBar();
-            this.debugLabel = new System.Windows.Forms.Label();
-            this.debugLabel2 = new System.Windows.Forms.Label();
             this.gb_Tiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Goomba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_BottomRight)).BeginInit();
@@ -84,8 +82,6 @@
             // 
             // gb_Tiles
             // 
-            this.gb_Tiles.Controls.Add(this.debugLabel2);
-            this.gb_Tiles.Controls.Add(this.debugLabel);
             this.gb_Tiles.Controls.Add(this.pictureBox_Goomba);
             this.gb_Tiles.Controls.Add(this.pictureBox_Pipe_BottomRight);
             this.gb_Tiles.Controls.Add(this.pictureBox_Pipe_BottomCenter);
@@ -408,24 +404,6 @@
             this.vScrollBar.TabIndex = 13;
             this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
             // 
-            // debugLabel
-            // 
-            this.debugLabel.AutoSize = true;
-            this.debugLabel.Location = new System.Drawing.Point(7, 380);
-            this.debugLabel.Name = "debugLabel";
-            this.debugLabel.Size = new System.Drawing.Size(83, 17);
-            this.debugLabel.TabIndex = 25;
-            this.debugLabel.Text = "debugLabel";
-            // 
-            // debugLabel2
-            // 
-            this.debugLabel2.AutoSize = true;
-            this.debugLabel2.Location = new System.Drawing.Point(7, 397);
-            this.debugLabel2.Name = "debugLabel2";
-            this.debugLabel2.Size = new System.Drawing.Size(91, 17);
-            this.debugLabel2.TabIndex = 26;
-            this.debugLabel2.Text = "debugLabel2";
-            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1616, 840);
@@ -437,6 +415,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Leveleditor for Mario";
             this.MaximizedBoundsChanged += new System.EventHandler(this.MainForm_Resize);
             this.MaximumSizeChanged += new System.EventHandler(this.MainForm_Resize);
             this.MinimumSizeChanged += new System.EventHandler(this.MainForm_Resize);
@@ -500,8 +479,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Pipe_TopLeft;
         private System.Windows.Forms.PictureBox pictureBox_Goomba;
         private System.Windows.Forms.VScrollBar vScrollBar;
-        private System.Windows.Forms.Label debugLabel;
-        private System.Windows.Forms.Label debugLabel2;
     }
 }
 
