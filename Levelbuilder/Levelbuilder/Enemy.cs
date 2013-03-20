@@ -20,24 +20,11 @@ namespace Levelbuilder
         }
     }
 
-    abstract class Koopa : Enemy
-    {
-
-    }
-
-    class Troopa : Koopa
+    class Koopa : Enemy
     {
         public override Image getImage()
         {
             return Properties.Resources.Troopa;
-        }
-    }
-
-    class ParaTroopa : Koopa
-    {
-        public override Image getImage()
-        {
-            return Properties.Resources.ParaTroopa;
         }
     }
 }

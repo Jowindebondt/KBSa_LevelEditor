@@ -187,4 +187,55 @@
   <data name="Troopa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Troopa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Block_Coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Block_Coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Block_Coin5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Block_Coin5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Block_Fixed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Block_Fixed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Block_LevelUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Block_LevelUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Block_PowerUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Block_PowerUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Battlement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Battlement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Battlement_Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Battlement_Wall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Door" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Gap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Gap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Wall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Wall_LeftGap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Wall_LeftGap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Castle_Wall_RightGap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Castle_Wall_RightGap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialBlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpecialBlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialBlock_Coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpecialBlock_Coin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialBlock_Coin5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpecialBlock_Coin5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialBlock_LevelUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpecialBlock_LevelUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SpecialBlock_PowerUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpecialBlock_PowerUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

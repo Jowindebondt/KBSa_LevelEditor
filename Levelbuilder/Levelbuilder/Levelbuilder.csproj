@@ -151,6 +151,54 @@
   <ItemGroup>
     <None Include="Resources\Troopa.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Block_Coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Block_Coin5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Block_Fixed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Block_LevelUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Block_PowerUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpecialBlock_Coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpecialBlock_Coin5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpecialBlock_LevelUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SpecialBlock_PowerUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Battlement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Battlement_Wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Gap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Wall_LeftGap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Castle_Wall_RightGap.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -37,9 +37,22 @@
             this.hScrollBar = new System.Windows.Forms.HScrollBar();
             this.vScrollBar = new System.Windows.Forms.VScrollBar();
             this.panel = new System.Windows.Forms.Panel();
-            this.pictureBox_Bowser = new System.Windows.Forms.PictureBox();
-            this.pictureBox_PiranhaPlant = new System.Windows.Forms.PictureBox();
-            this.pictureBox_ParaTroopa = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_RightGap = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_LeftGap = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_Gap = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_Door = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_Battlement_Wall = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_Battlement = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Castle_Wall = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Special_PowerUp = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Special_LiveUp = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Special_Coin5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Special_Coin = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_PowerUp = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_LiveUp = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Fixed = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Coin5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Coin = new System.Windows.Forms.PictureBox();
             this.pictureBox_Troopa = new System.Windows.Forms.PictureBox();
             this.pictureBox_Goomba = new System.Windows.Forms.PictureBox();
             this.pictureBox_Pipe_BottomRight = new System.Windows.Forms.PictureBox();
@@ -50,7 +63,7 @@
             this.pictureBox_Pipe_TopLeft = new System.Windows.Forms.PictureBox();
             this.pictureBox_Mario = new System.Windows.Forms.PictureBox();
             this.pictureBox_Empty = new System.Windows.Forms.PictureBox();
-            this.pictureBox_SpecialBlock = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Block_Special = new System.Windows.Forms.PictureBox();
             this.pictureBox_Block = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ground_BottomRight = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ground_BottomCenter = new System.Windows.Forms.PictureBox();
@@ -62,9 +75,22 @@
             this.pictureBox_Ground_TopCenter = new System.Windows.Forms.PictureBox();
             this.pictureBox_Ground_TopLeft = new System.Windows.Forms.PictureBox();
             this.gb_Tiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Bowser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PiranhaPlant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ParaTroopa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_RightGap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_LeftGap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Gap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Door)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Battlement_Wall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Battlement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Wall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_PowerUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_LiveUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_Coin5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_Coin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_PowerUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_LiveUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Fixed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Coin5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Coin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Troopa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Goomba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_BottomRight)).BeginInit();
@@ -75,7 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_TopLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Mario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Empty)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SpecialBlock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ground_BottomRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ground_BottomCenter)).BeginInit();
@@ -90,9 +116,22 @@
             // 
             // gb_Tiles
             // 
-            this.gb_Tiles.Controls.Add(this.pictureBox_Bowser);
-            this.gb_Tiles.Controls.Add(this.pictureBox_PiranhaPlant);
-            this.gb_Tiles.Controls.Add(this.pictureBox_ParaTroopa);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_RightGap);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_LeftGap);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_Gap);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_Door);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_Battlement_Wall);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_Battlement);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Castle_Wall);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Special_PowerUp);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Special_LiveUp);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Special_Coin5);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Special_Coin);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_PowerUp);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_LiveUp);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Fixed);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Coin5);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Coin);
             this.gb_Tiles.Controls.Add(this.pictureBox_Troopa);
             this.gb_Tiles.Controls.Add(this.pictureBox_Goomba);
             this.gb_Tiles.Controls.Add(this.pictureBox_Pipe_BottomRight);
@@ -105,7 +144,7 @@
             this.gb_Tiles.Controls.Add(this.pictureBox_Mario);
             this.gb_Tiles.Controls.Add(this.button_CreateXML);
             this.gb_Tiles.Controls.Add(this.pictureBox_Empty);
-            this.gb_Tiles.Controls.Add(this.pictureBox_SpecialBlock);
+            this.gb_Tiles.Controls.Add(this.pictureBox_Block_Special);
             this.gb_Tiles.Controls.Add(this.pictureBox_Block);
             this.gb_Tiles.Controls.Add(this.pictureBox_Ground_BottomRight);
             this.gb_Tiles.Controls.Add(this.pictureBox_Ground_BottomCenter);
@@ -197,42 +236,187 @@
             this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             this.panel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel_MouseClick);
             // 
-            // pictureBox_Bowser
+            // pictureBox_Castle_RightGap
             // 
-            this.pictureBox_Bowser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Bowser.Location = new System.Drawing.Point(141, 245);
-            this.pictureBox_Bowser.Name = "pictureBox_Bowser";
-            this.pictureBox_Bowser.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_Bowser.TabIndex = 28;
-            this.pictureBox_Bowser.TabStop = false;
-            this.pictureBox_Bowser.Visible = false;
+            this.pictureBox_Castle_RightGap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_RightGap.Image = global::Levelbuilder.Properties.Resources.Castle_Wall_RightGap;
+            this.pictureBox_Castle_RightGap.Location = new System.Drawing.Point(205, 307);
+            this.pictureBox_Castle_RightGap.Name = "pictureBox_Castle_RightGap";
+            this.pictureBox_Castle_RightGap.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_RightGap.TabIndex = 44;
+            this.pictureBox_Castle_RightGap.TabStop = false;
+            this.pictureBox_Castle_RightGap.Click += new System.EventHandler(this.pictureBox_Click);
             // 
-            // pictureBox_PiranhaPlant
+            // pictureBox_Castle_LeftGap
             // 
-            this.pictureBox_PiranhaPlant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_PiranhaPlant.Location = new System.Drawing.Point(107, 245);
-            this.pictureBox_PiranhaPlant.Name = "pictureBox_PiranhaPlant";
-            this.pictureBox_PiranhaPlant.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_PiranhaPlant.TabIndex = 27;
-            this.pictureBox_PiranhaPlant.TabStop = false;
-            this.pictureBox_PiranhaPlant.Visible = false;
+            this.pictureBox_Castle_LeftGap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_LeftGap.Image = global::Levelbuilder.Properties.Resources.Castle_Wall_LeftGap;
+            this.pictureBox_Castle_LeftGap.Location = new System.Drawing.Point(139, 307);
+            this.pictureBox_Castle_LeftGap.Name = "pictureBox_Castle_LeftGap";
+            this.pictureBox_Castle_LeftGap.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_LeftGap.TabIndex = 43;
+            this.pictureBox_Castle_LeftGap.TabStop = false;
+            this.pictureBox_Castle_LeftGap.Click += new System.EventHandler(this.pictureBox_Click);
             // 
-            // pictureBox_ParaTroopa
+            // pictureBox_Castle_Gap
             // 
-            this.pictureBox_ParaTroopa.BackgroundImage = global::Levelbuilder.Properties.Resources.ParaTroopa;
-            this.pictureBox_ParaTroopa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_ParaTroopa.Location = new System.Drawing.Point(73, 245);
-            this.pictureBox_ParaTroopa.Name = "pictureBox_ParaTroopa";
-            this.pictureBox_ParaTroopa.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_ParaTroopa.TabIndex = 26;
-            this.pictureBox_ParaTroopa.TabStop = false;
-            this.pictureBox_ParaTroopa.Click += new System.EventHandler(this.pictureBox_Click);
+            this.pictureBox_Castle_Gap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_Gap.Image = global::Levelbuilder.Properties.Resources.Castle_Gap;
+            this.pictureBox_Castle_Gap.Location = new System.Drawing.Point(172, 307);
+            this.pictureBox_Castle_Gap.Name = "pictureBox_Castle_Gap";
+            this.pictureBox_Castle_Gap.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_Gap.TabIndex = 42;
+            this.pictureBox_Castle_Gap.TabStop = false;
+            this.pictureBox_Castle_Gap.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Castle_Door
+            // 
+            this.pictureBox_Castle_Door.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_Door.Image = global::Levelbuilder.Properties.Resources.Castle_Door;
+            this.pictureBox_Castle_Door.Location = new System.Drawing.Point(172, 274);
+            this.pictureBox_Castle_Door.Name = "pictureBox_Castle_Door";
+            this.pictureBox_Castle_Door.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_Door.TabIndex = 41;
+            this.pictureBox_Castle_Door.TabStop = false;
+            this.pictureBox_Castle_Door.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Castle_Battlement_Wall
+            // 
+            this.pictureBox_Castle_Battlement_Wall.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_Battlement_Wall.Image = global::Levelbuilder.Properties.Resources.Castle_Battlement_Wall;
+            this.pictureBox_Castle_Battlement_Wall.Location = new System.Drawing.Point(187, 241);
+            this.pictureBox_Castle_Battlement_Wall.Name = "pictureBox_Castle_Battlement_Wall";
+            this.pictureBox_Castle_Battlement_Wall.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_Battlement_Wall.TabIndex = 40;
+            this.pictureBox_Castle_Battlement_Wall.TabStop = false;
+            this.pictureBox_Castle_Battlement_Wall.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Castle_Battlement
+            // 
+            this.pictureBox_Castle_Battlement.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_Battlement.Image = global::Levelbuilder.Properties.Resources.Castle_Battlement;
+            this.pictureBox_Castle_Battlement.Location = new System.Drawing.Point(154, 241);
+            this.pictureBox_Castle_Battlement.Name = "pictureBox_Castle_Battlement";
+            this.pictureBox_Castle_Battlement.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_Battlement.TabIndex = 39;
+            this.pictureBox_Castle_Battlement.TabStop = false;
+            this.pictureBox_Castle_Battlement.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Castle_Wall
+            // 
+            this.pictureBox_Castle_Wall.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Castle_Wall.Image = global::Levelbuilder.Properties.Resources.Castle_Wall;
+            this.pictureBox_Castle_Wall.Location = new System.Drawing.Point(139, 274);
+            this.pictureBox_Castle_Wall.Name = "pictureBox_Castle_Wall";
+            this.pictureBox_Castle_Wall.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Castle_Wall.TabIndex = 38;
+            this.pictureBox_Castle_Wall.TabStop = false;
+            this.pictureBox_Castle_Wall.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Special_PowerUp
+            // 
+            this.pictureBox_Block_Special_PowerUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Special_PowerUp.Image = global::Levelbuilder.Properties.Resources.SpecialBlock_PowerUp;
+            this.pictureBox_Block_Special_PowerUp.Location = new System.Drawing.Point(172, 203);
+            this.pictureBox_Block_Special_PowerUp.Name = "pictureBox_Block_Special_PowerUp";
+            this.pictureBox_Block_Special_PowerUp.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Special_PowerUp.TabIndex = 37;
+            this.pictureBox_Block_Special_PowerUp.TabStop = false;
+            this.pictureBox_Block_Special_PowerUp.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Special_LiveUp
+            // 
+            this.pictureBox_Block_Special_LiveUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Special_LiveUp.Image = global::Levelbuilder.Properties.Resources.SpecialBlock_LevelUp;
+            this.pictureBox_Block_Special_LiveUp.Location = new System.Drawing.Point(172, 170);
+            this.pictureBox_Block_Special_LiveUp.Name = "pictureBox_Block_Special_LiveUp";
+            this.pictureBox_Block_Special_LiveUp.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Special_LiveUp.TabIndex = 36;
+            this.pictureBox_Block_Special_LiveUp.TabStop = false;
+            this.pictureBox_Block_Special_LiveUp.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Special_Coin5
+            // 
+            this.pictureBox_Block_Special_Coin5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Special_Coin5.Image = global::Levelbuilder.Properties.Resources.SpecialBlock_Coin5;
+            this.pictureBox_Block_Special_Coin5.Location = new System.Drawing.Point(172, 137);
+            this.pictureBox_Block_Special_Coin5.Name = "pictureBox_Block_Special_Coin5";
+            this.pictureBox_Block_Special_Coin5.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Special_Coin5.TabIndex = 35;
+            this.pictureBox_Block_Special_Coin5.TabStop = false;
+            this.pictureBox_Block_Special_Coin5.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Special_Coin
+            // 
+            this.pictureBox_Block_Special_Coin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Special_Coin.Image = global::Levelbuilder.Properties.Resources.SpecialBlock_Coin;
+            this.pictureBox_Block_Special_Coin.Location = new System.Drawing.Point(172, 104);
+            this.pictureBox_Block_Special_Coin.Name = "pictureBox_Block_Special_Coin";
+            this.pictureBox_Block_Special_Coin.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Special_Coin.TabIndex = 34;
+            this.pictureBox_Block_Special_Coin.TabStop = false;
+            this.pictureBox_Block_Special_Coin.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_PowerUp
+            // 
+            this.pictureBox_Block_PowerUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_PowerUp.Image = global::Levelbuilder.Properties.Resources.Block_PowerUp;
+            this.pictureBox_Block_PowerUp.Location = new System.Drawing.Point(138, 203);
+            this.pictureBox_Block_PowerUp.Name = "pictureBox_Block_PowerUp";
+            this.pictureBox_Block_PowerUp.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_PowerUp.TabIndex = 33;
+            this.pictureBox_Block_PowerUp.TabStop = false;
+            this.pictureBox_Block_PowerUp.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_LiveUp
+            // 
+            this.pictureBox_Block_LiveUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_LiveUp.Image = global::Levelbuilder.Properties.Resources.Block_LevelUp;
+            this.pictureBox_Block_LiveUp.Location = new System.Drawing.Point(138, 170);
+            this.pictureBox_Block_LiveUp.Name = "pictureBox_Block_LiveUp";
+            this.pictureBox_Block_LiveUp.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_LiveUp.TabIndex = 32;
+            this.pictureBox_Block_LiveUp.TabStop = false;
+            this.pictureBox_Block_LiveUp.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Fixed
+            // 
+            this.pictureBox_Block_Fixed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Fixed.Image = global::Levelbuilder.Properties.Resources.Block_Fixed;
+            this.pictureBox_Block_Fixed.Location = new System.Drawing.Point(206, 104);
+            this.pictureBox_Block_Fixed.Name = "pictureBox_Block_Fixed";
+            this.pictureBox_Block_Fixed.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Fixed.TabIndex = 31;
+            this.pictureBox_Block_Fixed.TabStop = false;
+            this.pictureBox_Block_Fixed.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Coin5
+            // 
+            this.pictureBox_Block_Coin5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Coin5.Image = global::Levelbuilder.Properties.Resources.Block_Coin5;
+            this.pictureBox_Block_Coin5.Location = new System.Drawing.Point(138, 137);
+            this.pictureBox_Block_Coin5.Name = "pictureBox_Block_Coin5";
+            this.pictureBox_Block_Coin5.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Coin5.TabIndex = 30;
+            this.pictureBox_Block_Coin5.TabStop = false;
+            this.pictureBox_Block_Coin5.Click += new System.EventHandler(this.pictureBox_Click);
+            // 
+            // pictureBox_Block_Coin
+            // 
+            this.pictureBox_Block_Coin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Coin.Image = global::Levelbuilder.Properties.Resources.Block_Coin;
+            this.pictureBox_Block_Coin.Location = new System.Drawing.Point(138, 104);
+            this.pictureBox_Block_Coin.Name = "pictureBox_Block_Coin";
+            this.pictureBox_Block_Coin.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Coin.TabIndex = 29;
+            this.pictureBox_Block_Coin.TabStop = false;
+            this.pictureBox_Block_Coin.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBox_Troopa
             // 
             this.pictureBox_Troopa.BackgroundImage = global::Levelbuilder.Properties.Resources.Troopa;
             this.pictureBox_Troopa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Troopa.Location = new System.Drawing.Point(40, 245);
+            this.pictureBox_Troopa.Location = new System.Drawing.Point(82, 266);
             this.pictureBox_Troopa.Name = "pictureBox_Troopa";
             this.pictureBox_Troopa.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Troopa.TabIndex = 25;
@@ -243,7 +427,7 @@
             // 
             this.pictureBox_Goomba.BackgroundImage = global::Levelbuilder.Properties.Resources.Goomba;
             this.pictureBox_Goomba.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Goomba.Location = new System.Drawing.Point(7, 245);
+            this.pictureBox_Goomba.Location = new System.Drawing.Point(49, 266);
             this.pictureBox_Goomba.Name = "pictureBox_Goomba";
             this.pictureBox_Goomba.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Goomba.TabIndex = 24;
@@ -254,7 +438,7 @@
             // 
             this.pictureBox_Pipe_BottomRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_BottomRight.Image = global::Levelbuilder.Properties.Resources.pipeBottomRight;
-            this.pictureBox_Pipe_BottomRight.Location = new System.Drawing.Point(205, 151);
+            this.pictureBox_Pipe_BottomRight.Location = new System.Drawing.Point(73, 208);
             this.pictureBox_Pipe_BottomRight.Name = "pictureBox_Pipe_BottomRight";
             this.pictureBox_Pipe_BottomRight.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_BottomRight.TabIndex = 23;
@@ -265,7 +449,7 @@
             // 
             this.pictureBox_Pipe_BottomCenter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_BottomCenter.Image = global::Levelbuilder.Properties.Resources.pipeBottomCenter;
-            this.pictureBox_Pipe_BottomCenter.Location = new System.Drawing.Point(172, 151);
+            this.pictureBox_Pipe_BottomCenter.Location = new System.Drawing.Point(40, 208);
             this.pictureBox_Pipe_BottomCenter.Name = "pictureBox_Pipe_BottomCenter";
             this.pictureBox_Pipe_BottomCenter.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_BottomCenter.TabIndex = 22;
@@ -276,7 +460,7 @@
             // 
             this.pictureBox_Pipe_BottomLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_BottomLeft.Image = global::Levelbuilder.Properties.Resources.pipeBottomLeft;
-            this.pictureBox_Pipe_BottomLeft.Location = new System.Drawing.Point(139, 151);
+            this.pictureBox_Pipe_BottomLeft.Location = new System.Drawing.Point(7, 208);
             this.pictureBox_Pipe_BottomLeft.Name = "pictureBox_Pipe_BottomLeft";
             this.pictureBox_Pipe_BottomLeft.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_BottomLeft.TabIndex = 21;
@@ -287,7 +471,7 @@
             // 
             this.pictureBox_Pipe_TopRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_TopRight.Image = global::Levelbuilder.Properties.Resources.pipeTopRight;
-            this.pictureBox_Pipe_TopRight.Location = new System.Drawing.Point(205, 118);
+            this.pictureBox_Pipe_TopRight.Location = new System.Drawing.Point(73, 175);
             this.pictureBox_Pipe_TopRight.Name = "pictureBox_Pipe_TopRight";
             this.pictureBox_Pipe_TopRight.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_TopRight.TabIndex = 20;
@@ -298,7 +482,7 @@
             // 
             this.pictureBox_Pipe_TopCenter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_TopCenter.Image = global::Levelbuilder.Properties.Resources.pipeTopCenter;
-            this.pictureBox_Pipe_TopCenter.Location = new System.Drawing.Point(172, 118);
+            this.pictureBox_Pipe_TopCenter.Location = new System.Drawing.Point(40, 175);
             this.pictureBox_Pipe_TopCenter.Name = "pictureBox_Pipe_TopCenter";
             this.pictureBox_Pipe_TopCenter.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_TopCenter.TabIndex = 19;
@@ -309,7 +493,7 @@
             // 
             this.pictureBox_Pipe_TopLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_Pipe_TopLeft.Image = global::Levelbuilder.Properties.Resources.pipeTopLeft;
-            this.pictureBox_Pipe_TopLeft.Location = new System.Drawing.Point(139, 118);
+            this.pictureBox_Pipe_TopLeft.Location = new System.Drawing.Point(7, 175);
             this.pictureBox_Pipe_TopLeft.Name = "pictureBox_Pipe_TopLeft";
             this.pictureBox_Pipe_TopLeft.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Pipe_TopLeft.TabIndex = 18;
@@ -320,7 +504,7 @@
             // 
             this.pictureBox_Mario.BackgroundImage = global::Levelbuilder.Properties.Resources.Mario;
             this.pictureBox_Mario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Mario.Location = new System.Drawing.Point(7, 207);
+            this.pictureBox_Mario.Location = new System.Drawing.Point(10, 266);
             this.pictureBox_Mario.Name = "pictureBox_Mario";
             this.pictureBox_Mario.Size = new System.Drawing.Size(32, 32);
             this.pictureBox_Mario.TabIndex = 16;
@@ -337,16 +521,16 @@
             this.pictureBox_Empty.TabStop = false;
             this.pictureBox_Empty.Click += new System.EventHandler(this.pictureBox_Click);
             // 
-            // pictureBox_SpecialBlock
+            // pictureBox_Block_Special
             // 
-            this.pictureBox_SpecialBlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_SpecialBlock.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_SpecialBlock.Image")));
-            this.pictureBox_SpecialBlock.Location = new System.Drawing.Point(172, 71);
-            this.pictureBox_SpecialBlock.Name = "pictureBox_SpecialBlock";
-            this.pictureBox_SpecialBlock.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_SpecialBlock.TabIndex = 13;
-            this.pictureBox_SpecialBlock.TabStop = false;
-            this.pictureBox_SpecialBlock.Click += new System.EventHandler(this.pictureBox_Click);
+            this.pictureBox_Block_Special.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_Block_Special.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Block_Special.Image")));
+            this.pictureBox_Block_Special.Location = new System.Drawing.Point(172, 71);
+            this.pictureBox_Block_Special.Name = "pictureBox_Block_Special";
+            this.pictureBox_Block_Special.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Block_Special.TabIndex = 13;
+            this.pictureBox_Block_Special.TabStop = false;
+            this.pictureBox_Block_Special.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // pictureBox_Block
             // 
@@ -479,9 +663,22 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.gb_Tiles.ResumeLayout(false);
             this.gb_Tiles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Bowser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PiranhaPlant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ParaTroopa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_RightGap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_LeftGap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Gap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Door)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Battlement_Wall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Battlement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Castle_Wall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_PowerUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_LiveUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_Coin5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special_Coin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_PowerUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_LiveUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Fixed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Coin5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Coin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Troopa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Goomba)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_BottomRight)).EndInit();
@@ -492,7 +689,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pipe_TopLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Mario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Empty)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SpecialBlock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block_Special)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Block)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ground_BottomRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Ground_BottomCenter)).EndInit();
@@ -523,7 +720,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Ground_TopLeft;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.HScrollBar hScrollBar;
-        private System.Windows.Forms.PictureBox pictureBox_SpecialBlock;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Special;
         private System.Windows.Forms.PictureBox pictureBox_Block;
         private System.Windows.Forms.PictureBox pictureBox_Empty;
         private System.Windows.Forms.Button button_CreateXML;
@@ -537,10 +734,23 @@
         private System.Windows.Forms.PictureBox pictureBox_Pipe_TopLeft;
         private System.Windows.Forms.PictureBox pictureBox_Goomba;
         private System.Windows.Forms.VScrollBar vScrollBar;
-        private System.Windows.Forms.PictureBox pictureBox_Bowser;
-        private System.Windows.Forms.PictureBox pictureBox_PiranhaPlant;
-        private System.Windows.Forms.PictureBox pictureBox_ParaTroopa;
         private System.Windows.Forms.PictureBox pictureBox_Troopa;
+        private System.Windows.Forms.PictureBox pictureBox_Block_PowerUp;
+        private System.Windows.Forms.PictureBox pictureBox_Block_LiveUp;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Fixed;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Coin5;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Coin;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Special_PowerUp;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Special_LiveUp;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Special_Coin5;
+        private System.Windows.Forms.PictureBox pictureBox_Block_Special_Coin;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_RightGap;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_LeftGap;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_Gap;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_Door;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_Battlement_Wall;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_Battlement;
+        private System.Windows.Forms.PictureBox pictureBox_Castle_Wall;
     }
 }
 

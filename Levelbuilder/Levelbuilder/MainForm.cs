@@ -47,6 +47,12 @@ namespace Levelbuilder
 
             comboBox_Theme.SelectedIndex = 0;
 
+            for (int i = 0; i < ROWS; i++)
+            {
+                level[0][i].gameObject = new Block() { isFixed = true };
+                level[COLUMNS - 3][i].gameObject = new Block() { isFixed = true };
+            }
+
             setupScreen();
         }
 
@@ -169,45 +175,48 @@ namespace Levelbuilder
             {
                 selectedNodes.Clear();
 
-                if (selectedEnemy != null)
-                    selectedEnemy.endPoint = new Point(x - 1, y - 1);
-                
-                if (x < lastSelectedNode.X)
+                if (x <= COLUMNS || y <= ROWS)
                 {
-                    for (int i = x - 1; i <= lastSelectedNode.X; i++)
+                    if (selectedEnemy != null)
+                        selectedEnemy.endPoint = new Point(x - 1, y - 1);
+
+                    if (x < lastSelectedNode.X)
                     {
-                        if (y < lastSelectedNode.Y)
+                        for (int i = x - 1; i <= lastSelectedNode.X; i++)
                         {
-                            for (int j = y - 1; j <= lastSelectedNode.Y; j++)
+                            if (y < lastSelectedNode.Y)
                             {
-                                selectedNodes.Add(level[i][j]);
+                                for (int j = y - 1; j <= lastSelectedNode.Y; j++)
+                                {
+                                    selectedNodes.Add(level[i][j]);
+                                }
                             }
-                        }
-                        else if (y >= lastSelectedNode.Y)
-                        {
-                            for (int j = lastSelectedNode.Y; j < y; j++)
+                            else if (y >= lastSelectedNode.Y)
                             {
-                                selectedNodes.Add(level[i][j]);
+                                for (int j = lastSelectedNode.Y; j < y; j++)
+                                {
+                                    selectedNodes.Add(level[i][j]);
+                                }
                             }
                         }
                     }
-                }
-                else if (x >= lastSelectedNode.X)
-                {
-                    for (int i = lastSelectedNode.X; i < x; i++)
+                    else if (x >= lastSelectedNode.X)
                     {
-                        if (y < lastSelectedNode.Y)
+                        for (int i = lastSelectedNode.X; i < x; i++)
                         {
-                            for (int j = y; j <= lastSelectedNode.Y; j++)
+                            if (y < lastSelectedNode.Y)
                             {
-                                selectedNodes.Add(level[i][j]);
+                                for (int j = y; j <= lastSelectedNode.Y; j++)
+                                {
+                                    selectedNodes.Add(level[i][j]);
+                                }
                             }
-                        }
-                        else if (y >= lastSelectedNode.Y)
-                        {
-                            for (int j = lastSelectedNode.Y; j < y; j++)
+                            else if (y >= lastSelectedNode.Y)
                             {
-                                selectedNodes.Add(level[i][j]);
+                                for (int j = lastSelectedNode.Y; j < y; j++)
+                                {
+                                    selectedNodes.Add(level[i][j]);
+                                }
                             }
                         }
                     }
@@ -216,60 +225,62 @@ namespace Levelbuilder
             else
             {
                 selectedNodes.Clear();
-                selectedNodes.Add(level[x - 1][y - 1]);
-                if (level[x - 1][y - 1].gameObject != null && level[x - 1][y - 1].gameObject.GetType().BaseType == typeof(Enemy))
+                if (x <= COLUMNS || y <= ROWS)
                 {
-                    selectedEnemy = (Enemy)level[x - 1][y - 1].gameObject;
-                    if (selectedEnemy.endPoint.X > -1 && selectedEnemy.endPoint.Y > -1)
+                    selectedNodes.Add(level[x - 1][y - 1]);
+                    if (level[x - 1][y - 1].gameObject != null && level[x - 1][y - 1].gameObject.GetType().BaseType == typeof(Enemy))
                     {
-                        if (x < selectedEnemy.endPoint.X)
+                        selectedEnemy = (Enemy)level[x - 1][y - 1].gameObject;
+                        if (selectedEnemy.endPoint.X > -1 && selectedEnemy.endPoint.Y > -1)
                         {
-                            for (int i = x - 1; i <= selectedEnemy.endPoint.X; i++)
+                            if (x < selectedEnemy.endPoint.X)
                             {
-                                if (y < selectedEnemy.endPoint.Y)
+                                for (int i = x - 1; i <= selectedEnemy.endPoint.X; i++)
                                 {
-                                    for (int j = y - 1; j <= selectedEnemy.endPoint.Y; j++)
+                                    if (y < selectedEnemy.endPoint.Y)
                                     {
-                                        selectedNodes.Add(level[i][j]);
+                                        for (int j = y - 1; j <= selectedEnemy.endPoint.Y; j++)
+                                        {
+                                            selectedNodes.Add(level[i][j]);
+                                        }
                                     }
-                                }
-                                else if (y >= selectedEnemy.endPoint.Y)
-                                {
-                                    for (int j = selectedEnemy.endPoint.Y; j < y; j++)
+                                    else if (y >= selectedEnemy.endPoint.Y)
                                     {
-                                        selectedNodes.Add(level[i][j]);
+                                        for (int j = selectedEnemy.endPoint.Y; j < y; j++)
+                                        {
+                                            selectedNodes.Add(level[i][j]);
+                                        }
                                     }
                                 }
                             }
-                        }
-                        else if (x >= selectedEnemy.endPoint.X)
-                        {
-                            for (int i = selectedEnemy.endPoint.X; i < x; i++)
+                            else if (x >= selectedEnemy.endPoint.X)
                             {
-                                if (y < selectedEnemy.endPoint.Y)
+                                for (int i = selectedEnemy.endPoint.X; i < x; i++)
                                 {
-                                    for (int j = y; j <= selectedEnemy.endPoint.Y; j++)
+                                    if (y < selectedEnemy.endPoint.Y)
                                     {
-                                        selectedNodes.Add(level[i][j]);
+                                        for (int j = y; j <= selectedEnemy.endPoint.Y; j++)
+                                        {
+                                            selectedNodes.Add(level[i][j]);
+                                        }
                                     }
-                                }
-                                else if (y >= selectedEnemy.endPoint.Y)
-                                {
-                                    for (int j = selectedEnemy.endPoint.Y; j < y; j++)
+                                    else if (y >= selectedEnemy.endPoint.Y)
                                     {
-                                        selectedNodes.Add(level[i][j]);
+                                        for (int j = selectedEnemy.endPoint.Y; j < y; j++)
+                                        {
+                                            selectedNodes.Add(level[i][j]);
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                else
-                    selectedEnemy = null;
-               
-                lastSelectedNode = new Point(x - 1, y - 1);
-            }
+                    else
+                        selectedEnemy = null;
 
+                    lastSelectedNode = new Point(x - 1, y - 1);
+                }
+            }
             panel.Invalidate();
         }
 
@@ -348,8 +359,44 @@ namespace Levelbuilder
                             selectedNode.gameObject = new Block() { isSpecial = false };
                             break;
 
-                        case "pictureBox_SpecialBlock":
+                        case "pictureBox_Block_Special":
                             selectedNode.gameObject = new Block() { isSpecial = true };
+                            break;
+
+                        case "pictureBox_Block_Fixed":
+                            selectedNode.gameObject = new Block() { isFixed = true };
+                            break;
+
+                        case "pictureBox_Block_Coin":
+                            selectedNode.gameObject = new Block() { gadget = new Coin() { amount = 1 } };
+                            break;
+
+                        case "pictureBox_Block_Coin5":
+                            selectedNode.gameObject = new Block() { gadget = new Coin() { amount = 5 } };
+                            break;
+
+                        case "pictureBox_Block_PowerUp":
+                            selectedNode.gameObject = new Block() { gadget = new PowerUp() };
+                            break;
+
+                        case "pictureBox_Block_LiveUp":
+                            selectedNode.gameObject = new Block() { gadget = new LiveUp() };
+                            break;
+
+                        case "pictureBox_Block_Special_Coin":
+                            selectedNode.gameObject = new Block() { isSpecial = true, gadget = new Coin() { amount = 1 } };
+                            break;
+
+                        case "pictureBox_Block_Special_Coin5":
+                            selectedNode.gameObject = new Block() { isSpecial = true, gadget = new Coin() { amount = 5 } };
+                            break;
+
+                        case "pictureBox_Block_Special_PowerUp":
+                            selectedNode.gameObject = new Block() { isSpecial = true, gadget = new PowerUp() };
+                            break;
+
+                        case "pictureBox_Block_Special_LiveUp":
+                            selectedNode.gameObject = new Block() { isSpecial = true, gadget = new LiveUp() };
                             break;
 
                         case "pictureBox_Empty":
@@ -401,11 +448,35 @@ namespace Levelbuilder
                             break;
 
                         case "pictureBox_Troopa":
-                            selectedNode.gameObject = new Troopa() { endPoint = new Point(-1, -1) };
+                            selectedNode.gameObject = new Koopa() { endPoint = new Point(-1, -1) };
                             break;
 
-                        case "pictureBox_ParaTroopa":
-                            selectedNode.gameObject = new ParaTroopa() { endPoint = new Point(-1, -1) };
+                        case "pictureBox_Castle_Battlement":
+                            selectedNode.gameObject = new Castle() { castleType = 1 };
+                            break;
+
+                        case "pictureBox_Castle_Battlement_Wall":
+                            selectedNode.gameObject = new Castle() { castleType = 2 };
+                            break;
+
+                        case "pictureBox_Castle_Wall":
+                            selectedNode.gameObject = new Castle() { castleType = 3 };
+                            break;
+
+                        case "pictureBox_Castle_Door":
+                            selectedNode.gameObject = new Castle() { castleType = 4 };
+                            break;
+
+                        case "pictureBox_Castle_LeftGap":
+                            selectedNode.gameObject = new Castle() { castleType = 5 };
+                            break;
+
+                        case "pictureBox_Castle_Gap":
+                            selectedNode.gameObject = new Castle() { castleType = 6 };
+                            break;
+
+                        case "pictureBox_Castle_RightGap":
+                            selectedNode.gameObject = new Castle() { castleType = 7 };
                             break;
                     }
                 }
@@ -485,8 +556,7 @@ namespace Levelbuilder
                                 switch(level[i][j].gameObject.GetType().Name)
                                 {
                                     case "Goomba":
-                                    case "Troopa":
-                                    case "ParaTroopa":
+                                    case "Koopa":
                                         Enemy enemy = (Enemy)level[i][j].gameObject;
                                         //Opening the enemy node
                                         writer.WriteWhitespace("\t\t");
@@ -547,6 +617,7 @@ namespace Levelbuilder
                                 writer.WriteWhitespace("\t\t\t");
                                 writer.WriteStartElement("block");
                                 writer.WriteAttributeString("isSpecial", ((Block)level[i][j].gameObject).isSpecial.ToString().ToLower());
+                                writer.WriteAttributeString("isFixed", ((Block)level[i][j].gameObject).isFixed.ToString().ToLower());
                                 writer.WriteWhitespace("\n");
 
                                 //Creating a location node
@@ -562,13 +633,33 @@ namespace Levelbuilder
                                 writer.WriteStartElement("gadget");
                                 writer.WriteWhitespace("\n");
 
-                                //Creating a coin node
-                                writer.WriteWhitespace("\t\t\t\t\t");
-                                writer.WriteStartElement("coin");
-                                writer.WriteAttributeString("value", "5");
-                                writer.WriteEndElement();
-                                writer.WriteWhitespace("\n");
-
+                                if (((Block)level[i][j].gameObject).gadget != null && ((Block)level[i][j].gameObject).gadget.GetType() == typeof(Coin))
+                                {
+                                    for(int n = 0; n < ((Coin)((Block)level[i][j].gameObject).gadget).amount; n++)
+                                    {
+                                        //Creating a coin node
+                                        writer.WriteWhitespace("\t\t\t\t\t");
+                                        writer.WriteStartElement("coin");
+                                        writer.WriteEndElement();
+                                        writer.WriteWhitespace("\n");
+                                    }
+                                }
+                                else if (((Block)level[i][j].gameObject).gadget != null && ((Block)level[i][j].gameObject).gadget.GetType() == typeof(LiveUp))
+                                {
+                                    //Creating a liveup node
+                                    writer.WriteWhitespace("\t\t\t\t\t");
+                                    writer.WriteStartElement("liveup");
+                                    writer.WriteEndElement();
+                                    writer.WriteWhitespace("\n");
+                                }
+                                else if (((Block)level[i][j].gameObject).gadget != null && ((Block)level[i][j].gameObject).gadget.GetType() == typeof(PowerUp))
+                                {
+                                    //Creating a powerup node
+                                    writer.WriteWhitespace("\t\t\t\t\t");
+                                    writer.WriteStartElement("powerup");
+                                    writer.WriteEndElement();
+                                    writer.WriteWhitespace("\n");
+                                }
                                 //Closing a gadget node
                                 writer.WriteWhitespace("\t\t\t\t");
                                 writer.WriteEndElement();
@@ -663,6 +754,44 @@ namespace Levelbuilder
                     writer.WriteEndElement();
                     writer.WriteWhitespace("\n");
 
+                    //Opening the castles node
+                    writer.WriteWhitespace("\t\t");
+                    writer.WriteStartElement("castles");
+                    writer.WriteWhitespace("\n");
+
+                    for (int i = 0; i < COLUMNS; i++)
+                    {
+                        for (int j = 0; j < ROWS; j++)
+                        {
+                            if (level[i][j].gameObject != null && level[i][j].gameObject.GetType().Name == "Castle")
+                            {
+                                //Opening a castle node
+                                writer.WriteWhitespace("\t\t\t");
+                                writer.WriteStartElement("castle");
+                                writer.WriteAttributeString("type", ((Castle)level[i][j].gameObject).castleType.ToString());
+                                writer.WriteWhitespace("\n");
+
+                                //Creating a location node
+                                writer.WriteWhitespace("\t\t\t\t");
+                                writer.WriteStartElement("location");
+                                writer.WriteAttributeString("x", i.ToString());
+                                writer.WriteAttributeString("y", j.ToString());
+                                writer.WriteEndElement();
+                                writer.WriteWhitespace("\n");
+
+                                //Closing a castle node
+                                writer.WriteWhitespace("\t\t\t");
+                                writer.WriteEndElement();
+                                writer.WriteWhitespace("\n");
+                            }
+                        }
+                    }
+
+                    //Closing the castles node
+                    writer.WriteWhitespace("\t");
+                    writer.WriteEndElement();
+                    writer.WriteWhitespace("\n");
+
                     //Closing the level node
                     writer.WriteWhitespace("\t");
                     writer.WriteEndElement();
@@ -723,15 +852,43 @@ namespace Levelbuilder
 
                                 case "block":
                                     el = (XElement)XNode.ReadFrom(reader);
+                                    bool isFixed = false;
                                     bool isSpecial = false;
+                                    Gadget gadget = null;
+
                                     if (el.Attribute("isSpecial").Value == "true")
                                         isSpecial = true;
+                                    else if (el.Attribute("isFixed").Value == "true")
+                                        isFixed = true;
+
+                                    XElement gadgets = el.Element("gadget");
+                                    
+                                    if(gadgets.HasElements)
+                                    {
+                                        foreach(XElement gadgetChild in gadgets.Elements())
+                                        {
+                                            if (gadgetChild.Name == "coin")
+                                            {
+                                                if (gadget != null && gadget.GetType() == typeof(Coin))
+                                                    ((Coin)gadget).amount++;
+                                                gadget = new Coin() { amount = 1 };
+                                            }
+                                            else if (gadgetChild.Name == "liveup")
+                                            {
+                                                gadget = new LiveUp();
+                                            }
+                                            else if (gadgetChild.Name == "powerup")
+                                            {
+                                                gadget = new PowerUp();
+                                            }
+                                        }
+                                    }
 
                                     XElement blockLocation = el.Element("location");
                                     xLocation = Int32.Parse(blockLocation.Attribute("x").Value);
                                     yLocation = Int32.Parse(blockLocation.Attribute("y").Value);
 
-                                    level[xLocation][yLocation].gameObject = new Block(){isSpecial = isSpecial};
+                                    level[xLocation][yLocation].gameObject = new Block(){isSpecial = isSpecial, isFixed = isFixed, gadget = gadget};
                                     break;
 
                                 case "ground":
@@ -771,15 +928,22 @@ namespace Levelbuilder
                                             level[xLocation][yLocation].gameObject = new Goomba() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
                                             break;
 
-                                        case "troopa":
-                                            level[xLocation][yLocation].gameObject = new Troopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
-                                            break;
-
-                                        case "paratroopa":
-                                            level[xLocation][yLocation].gameObject = new ParaTroopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
+                                        case "koopa":
+                                            level[xLocation][yLocation].gameObject = new Koopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
                                             break;
                                     }
                                     
+                                    break;
+
+                                case "castle":
+                                    el = (XElement)XNode.ReadFrom(reader);
+
+                                    XElement castleLocation = el.Element("location");
+
+                                    xLocation = Int32.Parse(castleLocation.Attribute("x").Value);
+                                    yLocation = Int32.Parse(castleLocation.Attribute("y").Value);
+
+                                    level[xLocation][yLocation].gameObject = new Castle() { castleType = Int32.Parse(el.Attribute("type").Value) };
                                     break;
                             }
                         }
