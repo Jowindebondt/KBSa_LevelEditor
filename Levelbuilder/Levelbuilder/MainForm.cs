@@ -535,6 +535,9 @@ namespace Levelbuilder
                                 writer.WriteAttributeString("character", ((Hero)level[i][j].gameObject).character.ToString().ToLower());
                                 writer.WriteAttributeString("x", i.ToString());
                                 writer.WriteAttributeString("y", j.ToString());
+                                writer.WriteAttributeString("coins", "0");
+                                writer.WriteAttributeString("points", "0");
+                                writer.WriteAttributeString("lives", "5");
                             }
                         }
                     }
@@ -600,6 +603,7 @@ namespace Levelbuilder
                     writer.WriteStartElement("level");
                     writer.WriteAttributeString("width", COLUMNS.ToString());
                     writer.WriteAttributeString("height", ROWS.ToString());
+                    writer.WriteAttributeString("nr", "" + levelNumber.Value);
                     writer.WriteWhitespace("\n");
 
                     //Opening the blocks node
@@ -842,75 +846,121 @@ namespace Levelbuilder
 
                             switch (reader.Name)
                             {
+                                case "level":
+                                    el = (XElement)XNode.ReadFrom(reader);
+                                    levelNumber.Value = Int32.Parse(el.Attribute("nr").Value);
+                                    foreach (XElement levelChild in el.Elements())
+                                    {
+                                        switch (levelChild.Name.LocalName)
+                                        {
+                                            case "blocks":
+                                                foreach (XElement block in levelChild.Elements())
+                                                {
+                                                    switch (block.Name.LocalName)
+                                                    {
+                                                        case "block":
+                                                            bool isFixed = false;
+                                                            bool isSpecial = false;
+                                                            Gadget gadget = null;
+
+                                                            if (block.Attribute("isSpecial").Value == "true")
+                                                                isSpecial = true;
+                                                            else if (block.Attribute("isFixed").Value == "true")
+                                                                isFixed = true;
+
+                                                            XElement gadgets = block.Element("gadget");
+
+                                                            if (gadgets.HasElements)
+                                                            {
+                                                                foreach (XElement gadgetChild in gadgets.Elements())
+                                                                {
+                                                                    if (gadgetChild.Name == "coin")
+                                                                    {
+                                                                        if (gadget != null && gadget.GetType() == typeof(Coin))
+                                                                            ((Coin)gadget).amount++;
+                                                                        gadget = new Coin() { amount = 1 };
+                                                                    }
+                                                                    else if (gadgetChild.Name == "liveup")
+                                                                    {
+                                                                        gadget = new LiveUp();
+                                                                    }
+                                                                    else if (gadgetChild.Name == "powerup")
+                                                                    {
+                                                                        gadget = new PowerUp();
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            XElement blockLocation = block.Element("location");
+                                                            xLocation = Int32.Parse(blockLocation.Attribute("x").Value);
+                                                            yLocation = Int32.Parse(blockLocation.Attribute("y").Value);
+
+                                                            level[xLocation][yLocation].gameObject = new Block() { isSpecial = isSpecial, isFixed = isFixed, gadget = gadget };
+                                                            break;
+                                                    }
+                                                }
+                                                break;
+
+                                            case "pipes":
+                                                foreach (XElement pipe in levelChild.Elements())
+                                                {
+                                                    switch (pipe.Name.LocalName)
+                                                    {
+                                                        case "pipe":
+                                                            XElement pipeLocation = pipe.Element("location");
+
+                                                            xLocation = Int32.Parse(pipeLocation.Attribute("x").Value);
+                                                            yLocation = Int32.Parse(pipeLocation.Attribute("y").Value);
+
+                                                            level[xLocation][yLocation].gameObject = new Pipe() { pipeType = Int32.Parse(pipe.Attribute("type").Value) };
+                                                            break;
+                                                    }
+                                                }
+                                                break;
+
+                                            case "castles":
+                                                foreach (XElement castle in levelChild.Elements())
+                                                {
+                                                    switch (castle.Name.LocalName)
+                                                    {
+                                                        case "castle":
+                                                            XElement castleLocation = castle.Element("location");
+
+                                                            xLocation = Int32.Parse(castleLocation.Attribute("x").Value);
+                                                            yLocation = Int32.Parse(castleLocation.Attribute("y").Value);
+
+                                                            level[xLocation][yLocation].gameObject = new Castle() { castleType = Int32.Parse(castle.Attribute("type").Value) };
+                                                            break;
+                                                    }
+                                                }
+                                                break;
+
+                                            case "grounds":
+                                                foreach (XElement ground in levelChild.Elements())
+                                                {
+                                                    switch (ground.Name.LocalName)
+                                                    {
+                                                        case "ground":
+                                                            XElement groundLocation = ground.Element("location");
+
+                                                            xLocation = Int32.Parse(groundLocation.Attribute("x").Value);
+                                                            yLocation = Int32.Parse(groundLocation.Attribute("y").Value);
+
+                                                            level[xLocation][yLocation].gameObject = new Ground() { groundType = Int32.Parse(ground.Attribute("type").Value) };
+                                                            break;
+                                                    }
+                                                }
+                                                break;
+                                        }
+                                    }
+                                    break;
+
                                 case "hero":
                                     el = (XElement)XNode.ReadFrom(reader);
                                     xLocation = Int32.Parse(el.Attribute("x").Value);
                                     yLocation = Int32.Parse(el.Attribute("y").Value);
                                     level[xLocation][yLocation].gameObject = new Hero(){character = el.Attribute("character").Value};
                                     HeroIsSet = true;
-                                    break;
-
-                                case "block":
-                                    el = (XElement)XNode.ReadFrom(reader);
-                                    bool isFixed = false;
-                                    bool isSpecial = false;
-                                    Gadget gadget = null;
-
-                                    if (el.Attribute("isSpecial").Value == "true")
-                                        isSpecial = true;
-                                    else if (el.Attribute("isFixed").Value == "true")
-                                        isFixed = true;
-
-                                    XElement gadgets = el.Element("gadget");
-                                    
-                                    if(gadgets.HasElements)
-                                    {
-                                        foreach(XElement gadgetChild in gadgets.Elements())
-                                        {
-                                            if (gadgetChild.Name == "coin")
-                                            {
-                                                if (gadget != null && gadget.GetType() == typeof(Coin))
-                                                    ((Coin)gadget).amount++;
-                                                gadget = new Coin() { amount = 1 };
-                                            }
-                                            else if (gadgetChild.Name == "liveup")
-                                            {
-                                                gadget = new LiveUp();
-                                            }
-                                            else if (gadgetChild.Name == "powerup")
-                                            {
-                                                gadget = new PowerUp();
-                                            }
-                                        }
-                                    }
-
-                                    XElement blockLocation = el.Element("location");
-                                    xLocation = Int32.Parse(blockLocation.Attribute("x").Value);
-                                    yLocation = Int32.Parse(blockLocation.Attribute("y").Value);
-
-                                    level[xLocation][yLocation].gameObject = new Block(){isSpecial = isSpecial, isFixed = isFixed, gadget = gadget};
-                                    break;
-
-                                case "ground":
-                                    el = (XElement)XNode.ReadFrom(reader);
-
-                                    XElement groundLocation = el.Element("location");
-
-                                    xLocation = Int32.Parse(groundLocation.Attribute("x").Value);
-                                    yLocation = Int32.Parse(groundLocation.Attribute("y").Value);
-
-                                    level[xLocation][yLocation].gameObject = new Ground() { groundType = Int32.Parse(el.Attribute("type").Value) };
-                                    break;
-
-                                case "pipe":
-                                    el = (XElement)XNode.ReadFrom(reader);
-
-                                    XElement pipeLocation = el.Element("location");
-
-                                    xLocation = Int32.Parse(pipeLocation.Attribute("x").Value);
-                                    yLocation = Int32.Parse(pipeLocation.Attribute("y").Value);
-
-                                    level[xLocation][yLocation].gameObject = new Pipe() { pipeType = Int32.Parse(el.Attribute("type").Value) };
                                     break;
 
                                 case "enemy":
@@ -932,18 +982,6 @@ namespace Levelbuilder
                                             level[xLocation][yLocation].gameObject = new Koopa() { endPoint = new Point(Int32.Parse(enemyEndPosition.Attribute("x").Value), Int32.Parse(enemyEndPosition.Attribute("y").Value)) };
                                             break;
                                     }
-                                    
-                                    break;
-
-                                case "castle":
-                                    el = (XElement)XNode.ReadFrom(reader);
-
-                                    XElement castleLocation = el.Element("location");
-
-                                    xLocation = Int32.Parse(castleLocation.Attribute("x").Value);
-                                    yLocation = Int32.Parse(castleLocation.Attribute("y").Value);
-
-                                    level[xLocation][yLocation].gameObject = new Castle() { castleType = Int32.Parse(el.Attribute("type").Value) };
                                     break;
                             }
                         }
